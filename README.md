@@ -1,4 +1,4 @@
-# 📊 Conciliador ICD PRO - Extensão para Google Chrome
+# 📊 Conciliador ICD e Excel - Extensão para Google Chrome
 
 O **Conciliador ICD PRO** é uma ferramenta de produtividade robusta desenvolvida para automatizar a conferência de reservas entre planilhas de venda (Excel) e o sistema de relatórios da **Ingresso com Desconto (ICD)**.
 
