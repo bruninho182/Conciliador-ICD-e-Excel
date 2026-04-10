@@ -1,72 +1,86 @@
-📊 Conciliador ICD - Chrome Extension
-O Conciliador ICD é uma ferramenta de produtividade desenvolvida para automatizar a conferência manual de reservas entre planilhas de venda (Excel) e o sistema de relatórios da Ingresso com Desconto (ICD).
+# 📊 Conciliador ICD PRO - Extensão para Google Chrome
 
-Originalmente criado para facilitar o fluxo de trabalho no setor de turismo, a extensão elimina a necessidade de busca manual (Ctrl+F) código por código, oferecendo um feedback visual imediato e relatórios detalhados de divergências.
+O **Conciliador ICD PRO** é uma ferramenta de produtividade robusta desenvolvida para automatizar a conferência de reservas entre planilhas de venda (Excel) e o sistema de relatórios da **Ingresso com Desconto (ICD)**.
 
-🚀 Funcionalidades Principais
-Interface em Side Panel: A extensão utiliza a API de Painel Lateral do Chrome (Manifest V3), permitindo que você navegue entre as abas do sistema sem perder a interface de upload.
+Esta extensão foi projetada para eliminar o trabalho manual de conferência, reduzindo erros humanos e otimizando o tempo de operadores técnicos no setor de turismo.
 
-Comparação Inteligente: Cruza dados de arquivos .xlsx e .xls com a tabela do sistema usando o Booking Ref # (padrão GYG) como chave primária.
+---
 
-Feedback Visual na Página:
+## 🚀 Principais Funcionalidades
 
-🟩 Verde: Reserva encontrada e validada.
+### 🖥️ Interface em Painel Lateral (Side Panel)
+Aproveitando as tecnologias mais recentes do **Manifest V3**, a extensão funciona em um painel lateral fixo. Isso permite que você mude de aba ou navegue no sistema sem que a interface de upload desapareça.
 
-🟨 Amarelo: Reserva presente no sistema, mas ausente na planilha Excel.
+### 🔍 Comparação Inteligente e Automática
+O robô identifica automaticamente os códigos de reserva (padrão **GYG**) tanto na página web quanto no Excel, realizando o cruzamento de dados instantaneamente.
 
-🟥 Vermelho: Divergência de valores ou quantidades encontrada.
+### 🎨 Feedback Visual Instantâneo
+As linhas da tabela no sistema são coloridas automaticamente para facilitar a leitura:
+- **Verde (OK):** Reserva encontrada na planilha e validada.
+- **Amarelo (Atenção):** Reserva presente no sistema, mas não encontrada no Excel.
+- **Vermelho (Erro):** Divergência detectada em valores ou quantidades.
 
-Filtro "Limpar Ruído": Botão para ocultar instantaneamente todas as linhas validadas (verdes), permitindo foco total nos erros.
+### 🧹 Filtro "Limpar Ruído"
+Com um único clique, você pode ocultar todas as reservas que já estão conferidas (verdes), deixando na tela apenas os itens que precisam de atenção manual.
 
-Relatório de Mão Dupla: Abre uma nova aba com tabelas lado a lado mostrando o que falta no sistema e o que falta no Excel.
+### 📋 Relatório Lado a Lado
+Geração automática de uma nova aba com um relatório detalhado e organizado em duas colunas:
+1. O que consta no Excel mas falta no sistema.
+2. O que consta no sistema mas falta no Excel.
 
-Exportação: Gera relatórios profissionais em PDF ou CSV para auditoria.
+---
 
-Botão Quick-Copy: Adiciona um ícone de cópia rápida ao lado de cada código GYG no sistema.
+## 🛠️ Tecnologias Utilizadas
 
-🛠️ Tecnologias Utilizadas
-JavaScript (ES6+): Lógica principal e manipulação de DOM.
+- **JavaScript (ES6+):** Lógica de comparação e manipulação dinâmica de DOM.
+- **Chrome Extension API (Manifest V3):** Uso de Service Workers e Side Panel.
+- **SheetJS (XLSX.js):** Processamento de arquivos Excel diretamente no cliente.
+- **HTML5 & CSS3:** Interface responsiva e relatórios formatados.
 
-Chrome Extension API (Manifest V3): Service Workers, Side Panel e Content Scripts.
+---
 
-SheetJS (XLSX): Biblioteca para processamento de arquivos Excel no navegador.
+## 📂 Estrutura do Projeto
 
-CSS3: Layout responsivo para o painel lateral e relatórios.
-
-📂 Estrutura do Projeto
-Plaintext
-├── manifest.json         # Configurações da extensão (V3)
-├── background.js         # Service Worker para gerenciar o Side Panel
-├── sidepanel.html        # Interface do painel lateral
-├── sidepanel.js          # Lógica de upload e comunicação
-├── content.js            # O "coração" da extensão (leitura e pintura da página)
-├── xlsx.full.min.js      # Biblioteca SheetJS (local)
+```text
+├── manifest.json         # Manifesto de configuração da extensão
+├── background.js         # Gerencia o comportamento do Painel Lateral
+├── sidepanel.html        # Interface visual do painel
+├── sidepanel.js          # Lógica de processamento do Excel
+├── content.js            # Script que interage com a página do sistema
+├── xlsx.full.min.js      # Biblioteca para leitura de Excel
 └── README.md             # Documentação do projeto
+```
+---
 
-⚙️ Como Instalar (Modo Desenvolvedor)
-Faça o download ou clone este repositório.
+⚙️ Instruções de Instalação
+-Faça o download ou clone este repositório para o seu computador.
 
-Abra o Google Chrome e acesse chrome://extensions/.
+-Abra o Google Chrome e vá para chrome://extensions/.
 
-No canto superior direito, ative o "Modo do desenvolvedor".
+-No canto superior direito, ative o "Modo do desenvolvedor".
 
-Clique em "Carregar sem compactação".
+-Clique no botão "Carregar sem compactação".
 
-Selecione a pasta onde os arquivos do projeto estão salvos.
+-Selecione a pasta onde os arquivos estão localizados.
 
-O ícone da extensão aparecerá na sua barra (recomenda-se fixá-lo).
+-Fixe o ícone da extensão na sua barra de ferramentas para facilitar o acesso.
 
-📖 Como Usar
-Acesse o seu relatório na plataforma Ingresso com Desconto.
 
-Clique no ícone da extensão para abrir o Painel Lateral.
+📖 Como Utilizar
+-Acesse o relatório desejado no portal Ingresso com Desconto.
 
-Selecione o arquivo Excel exportado (ex: GetYourGuide).
+-Clique no ícone da extensão para abrir o painel lateral.
 
-Clique em "🚀 INICIAR CONCILIAÇÃO".
+-Selecione o arquivo Excel (ex: extraído do GetYourGuide ou Headout).
 
-Analise as cores na página ou utilize o relatório gerado na nova aba.
+-Clique em "🚀 INICIAR CONCILIAÇÃO".
 
-Use o botão "OCULTAR LINHAS OK" para limpar a visualização.
+-Utilize o botão "OCULTAR LINHAS OK" para focar apenas nas divergências.
 
-Bruno Ferreira - Desenvolvedor & Technical Operator 
+-Se necessário, exporte o relatório final em PDF ou CSV através da aba de resultados que será aberta.
+
+
+Desenvolvido por Bruno – Especialista em automação.
+
+
+
