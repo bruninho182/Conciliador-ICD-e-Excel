@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 300px; padding: 15px; font-family: 'Work Sans', sans-serif; }
+    button { 
+      width: 100%; padding: 12px; cursor: pointer; 
+      background: #28a745; color: white; border: none; 
+      border-radius: 4px; font-weight: bold; margin-top: 10px;
+    }
+    button:hover { background: #218838; }
+    h3 { color: #333; margin-top: 0; }
+  </style>
+</head>
+<body>
+  <h3>Conciliação ICD</h3>
+  <label>1. Selecione o Excel da GYG:</label>
+  <input type="file" id="excelFile" accept=".xlsx, .xls" style="margin-top: 10px;">
+  
+  <button id="btnComparar">Comparar</button>
+
+  <p>Criado por <a href="https://github.com/bruninho182" target="_blank">Bruno Ferreira</a></p>
+
+  <script src="xlsx.full.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
