@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; padding: 15px; background: #f8f9fa; }
+    .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px; }
+    h3 { margin-top: 0; color: #333; font-size: 16px; border-bottom: 2px solid #28a745; padding-bottom: 5px; }
+    button { 
+      width: 100%; padding: 10px; cursor: pointer; border: none; border-radius: 4px; 
+      font-weight: bold; margin-top: 10px; transition: 0.3s;
+    }
+    .btn-main { background: #28a745; color: white; }
+    .btn-main:hover { background: #218838; }
+    .btn-filter { background: #6c757d; color: white; }
+    .btn-filter.active { background: #dc3545; }
+    label { font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>📁 Importar Dados</h3>
+    <label>Selecione o Excel da GYG:</label>
+    <input type="file" id="excelFile" accept=".xlsx, .xls" style="margin-top:8px; width: 100%;">
+    <button id="btnComparar" class="btn-main">INICIAR CONCILIAÇÃO</button>
+  </div>
+
+  <div class="card">
+    <h3>🧹 Filtros de Visão</h3>
+    <button id="btnLimparRuido" class="btn-filter">👁️ OCULTAR LINHAS "OK"</button>
+    <p style="font-size: 11px; color: #888; margin-top: 8px;">Use para focar apenas nas reservas com erro ou faltantes.</p>
+    <br>
+    <p>Criado por <a href="https://github.com/bruninho182" target="_blank">Bruno Ferreira</a></p>
+  </div>
+
+  <script src="xlsx.full.min.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
